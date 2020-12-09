@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+    <title> ТЕСТ ПО ДИСЦИПЛИНЕ </title>
+     <link rel="stylesheet" href="css/main.css" type="text/css"/>
+     <script type="text/javascript" src="js/valid_test.JS"></script>
+     <script type="text/javascript" src="js/active_menu.js"></script>
+     <script type="text/javascript" src="js/date.js"></script>
+
+ </head>
+
+<body onload="saveHistory('test');">
+<header>
+	<div id="node"></div>
+	<div id="js/date.js"></div>
+	<div class="wrapper">
+	<div class="logo">
+		<a href="index.html">
+			<span class="NV">NV</span>
+		</a>
+	</div>
+
+<div class="top-menu">
+	<ul id="menu">
+	<li><a href ="index.html">ГЛАВНАЯ СТРАНИЦА </a></li>
+	<li><a href ="page1.html">ОБО МНЕ </a></li>
+	<li><a href ="page2.html">УЧЁБА </a></li>
+	<li class="menu-item">
+		<a href ="page3.html" id="page3">МОИ ИНТЕРЕСЫ</a>
+		<ul class="sub-menu">
+			<li id="hobby">
+				<a href="../WEB_1/page3.html#hobby">МОЁ ХОББИ</a>
+			</li>
+			<li id="books">
+				<a href="../WEB_1/page3.html#books">МОИ ЛЮБИМЫЕ КНИГИ</a>
+			</li>
+			<li id="movies">
+				<a href="../WEB_1/page3.html#movies">МОИ ЛЮБИМЫЕ ФИЛЬМЫ</a>
+			</li>
+		</ul>
+	</li>	
+	<li><a href ="page4.html">ФОТОАЛЬБОМ </a></li>
+	<li><a href ="page5.html">КОНТАКТ </a></li>
+	<li><a href ="page6.html">ТЕСТ ПО ДИСЦИПЛИНЕ</a></li>
+	<li><a href ="page7.html">ИСТОРИЯ ПРОСМОТРА</a></li>
+</ul>	
+</div>
+</div>
+</header>
+
+<article> ТЕСТ ПО ДИСЦИПЛИНЕ 
+<br>&#171;Инженерная графика&#187;</article>	
+
+<div class="brd">
+
+<form name="test" method="post" action="mailto:viktoria.27.nikolenko@mail.ru" onsubmit="return valid_test();">
+	<p><input type="text" name="fio" size=71 placeholder="Укажите ФИО"></p>
+	
+	<p>Группа:
+	<select  name = "selectvalue">
+
+	<option>ПИ/б-18-1-о</option>
+
+	<option>ИС/б-18-1-о</option>
+
+	<option>ИС/б-18-2-о</option>
+
+	<option>ИС/б-18-3-о</option>
+
+</select></p>
+
+
+<p>1. Какой способ проецирования   используется при построении чертежа?</p>
+	<p><input  type="radio" id="v_1_1" name="one" value="no">параллельное</p>
+	<p><input  type="radio" id="v_1_2" name="one" value="yes">прямоугольное</p>
+
+	<p>2. Какое изображение называется «эскиз» - это:
+		
+		<p><select name="two"><option></option>
+
+			<option value="1">чертеж, содержащий габаритные размеры детали</option>
+
+			<option value="2">чертеж, дающий представление о габаритах детали</option>
+
+			<option value="3">чертеж детали, выполненный от руки и позволяющий изготовить деталь+</option>
+
+			<option value="4">объемное изображение детали</option>
+
+		</select>
+	</p>
+
+	<p>3. Какие основные три вида вы знаете?(Главный вид, вид сверху, слева)</p>
+
+	<p><textarea rows="5" cols="73" name="three" id="v_3" lenght='30'></textarea></p> 
+
+<p>
+	<input type="submit" value="Проверить"> 
+	<input name="reset" type="reset" >
+</p>
+</form>
+
+<footer>
+	<address class="picture">
+	<a href ="https://vk.com/nikolenko99"><img src ="icon/VK.png" alt="Ошибка загрузки изображения!"></a>
+	<a href ="https://www.instagram.com/nikolenko_nv/"><img src ="icon/INSTAGRAM.png" alt="Ошибка загрузки изображения!"></a></address>
+	<p>СЕВАСТОПОЛЬ 2020</p>
+</footer>
+<script type="text/javascript" src="js/child_menu.js"></script>
+</body> 
+</html> 

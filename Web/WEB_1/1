@@ -1,0 +1,7 @@
+var fotos = new Array(15);
+
+   var path1 = "D:/Users/Maria/Desktop/5 семестр/WEB/Сайт/Фотоальбом/Фото/";
+   var i;
+   for (i = 1; i < 16; i++) {
+        fotos[i-1] = path1 + "photo" + i + ".jpg";
+   } 

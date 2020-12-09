@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Персональный сайт Шведенко Александра. Тест по дисциплине</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="menu">
+          <li>
+            <a href="index.html">Главная</a>
+          </li>
+          <li>
+            <a href="aboutMe.html">Обо мне</a>
+          </li>
+          <li class="menu-item">
+            <a href="interests.html">Мои интересы</a>
+            <ul class="sub-menu">
+              <li><a href="interests.html#hobby">Моё хобби</a></li>
+              <li><a href="interests.html#books">Мои любимые книги</a></li>
+              <li><a href="interests.html#films">Мои любимые фильмы</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="education.html">Учёба</a>
+          </li>
+          <li>
+            <a href="album.html">Фотоальбом</a>
+          </li>
+          <li>
+            <a href="contact.html">Контакт</a>
+          </li>
+          <li>
+            <a href="test.html">Тест по дисциплине</a>
+          </li>
+          <li>
+            <a href="history.html">История</a>
+          </li>
+        </ul>
+        <div id="time">00:00:00 1 январь 1970</div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-name">
+        <span>Тест по дисциплине (БЖД)</span>
+      </section>
+      <div class="content-wrapper grey-block">
+        <form
+          class="contact-form"
+          action="index.php"
+          method="post"
+          onsubmit="checkTestForm(this);return false;"
+        >
+          <div class="modal-wrapper">
+            <div class="modal">
+              <p></p>
+              <div class="modal-btns">
+                <button id="yes_modal" class="main-btn">Да</button>
+                <button id="no_modal" class="main-btn" type="button">
+                  Нет
+                </button>
+              </div>
+            </div>
+            <div class="overlay"></div>
+          </div>
+
+          <div id="tooltip"></div>
+
+          <div class="tooltip" data-tooltip-text="Ваши Фамилия Имя Отчество">
+            <p style="margin-top: 0">ФИО</p>
+            <input type="text" id="fio" name="fio" />
+            <p class="error">Заполните ФИО!</p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваша группа">
+            <p>Группа</p>
+            <select class="" name="age">
+              <optgroup label="1 курс">
+                <option value="">ПИ/б-20-1-о</option>
+              </optgroup>
+              <optgroup label="2 курс">
+                <option value="">ПИ/б-19-1-о</option>
+              </optgroup>
+              <optgroup label="3 курс">
+                <option value="">ПИ/б-18-1-о</option>
+              </optgroup>
+              <optgroup label="4 курс">
+                <option value="">ПИ/б-17-1-о</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Первый вопрос">
+            <p>1. Что делать при землетрясении?</p>
+            <textarea
+              type="text"
+              id="q_1"
+              name="q_1"
+              onchange="check_q_1(this)"
+            ></textarea>
+            <p class="error"></p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Второй вопрос">
+            <p>2. В каком году произошёл взрыв ЧАЭС?</p>
+            <p>
+              <input
+                class="radio-input"
+                type="radio"
+                name="q_2"
+                value=""
+                checked
+              />1975
+            </p>
+            <p>
+              <input class="radio-input" type="radio" name="q_2" value="" />1986
+            </p>
+            <p>
+              <input class="radio-input" type="radio" name="q_2" value="" />1977
+            </p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Третий вопрос">
+            <p>3. Что нужно делать при пожаре?</p>
+            <select name="q_3">
+              <option value="">Вызвать пожарных</option>
+              <option value="">Залезть под кровать</option>
+            </select>
+          </div>
+
+          <button
+            class="main-btn btn-show-modal"
+            data-modal-text="Отправить данные?"
+            data-btn-type="submit"
+            type="button"
+            name="button"
+          >
+            Отправить
+          </button>
+          <button
+            class="main-btn btn-show-modal"
+            data-modal-text="Стереть данные?"
+            data-btn-type="reset"
+            type="button"
+            name="button"
+          >
+            Очистить форму
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="Libs/jquery.js"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/checkForm.js" charset="utf-8"></script>
+  </body>
+</html>

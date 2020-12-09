@@ -1,0 +1,29 @@
+p{	
+		color:#FFFFFF;
+		text-align: justify;
+		font-family:Noto Sans;
+		font-size: 15px;
+	}
+
+legend{
+	color: #FFFFFF;
+	text-align: center;
+	font-family:Tenor Sans;
+	font-size: 30px;
+	margin-bottom:5px;
+}
+
+
+
+.brd {
+   		border: 4px double white; /* Параметры границы */
+   		padding: 10px; /* Поля вокруг текста */
+    	margin-left:35%;
+		margin-right:35%;
+   }
+ .gender{
+ 	text-align: center;
+ 	color: #FFFFFF;
+ 	font-family:Noto Sans;
+	font-size: 18px;
+ }

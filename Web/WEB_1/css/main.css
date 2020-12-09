@@ -1,0 +1,437 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.picture {
+  text-align: center;
+}
+
+.picture a {
+  padding: 12px;
+}
+
+.photo img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.photo {
+  font-family: Noto Sans;
+  font-size: 5px;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 20px;
+}
+
+.section img {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 200px;
+}
+
+.text {
+  font-family: Noto Sans;
+  font-size: 20px;
+  color: #000000;
+  margin-top: 190px;
+  text-align: center;
+}
+
+.text_me {
+  text-indent: 20px;
+  color: #000000;
+  text-align: justify;
+  font-family: Noto Sans;
+  font-size: 25px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.text_me a {
+  color: #000000;
+  margin-top: 7%;
+  font-family: Tenor Sans;
+  text-align: justify;
+  font-size: 30px;
+  margin-left: 2%;
+}
+
+.content {
+  margin-top: 100px;
+}
+
+.book, .film {
+  text-indent: 20px;
+  color: #000000;
+  text-align: justify;
+  font-family: Noto Sans;
+  font-size: 25px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.album {
+  font-family: Noto Sans;
+  color: #000000;
+  font-size: 30px;
+  text-align: center;
+}
+
+.album img {
+  width: 100%;
+}
+
+.wrapper_album_img {
+  display: flex;
+  justify-content: center;
+}
+
+#album_img {
+  display: none;
+  width: auto;
+  height: 700px;
+  top: 100px;
+  position: fixed;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2);
+  z-index: 3;
+}
+
+#album_img img {
+  width: auto;
+  height: 700px;
+  border-radius: 10px;
+}
+
+#black_bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+#black_bg:hover {
+  cursor: pointer;
+}
+
+.brd {
+  height: 100%;
+  border: 4px double black;
+  /* Параметры границы */
+  padding: 10px;
+  /* Поля вокруг текста */
+  margin-left: 34%;
+  margin-right: 34%;
+}
+
+.gender {
+  text-align: center;
+  color: #000000;
+  font-family: Noto Sans;
+  font-size: 18px;
+}
+
+.current a {
+  color: #000000;
+}
+
+form p {
+  color: #000000;
+  text-align: justify;
+  font-family: Noto Sans;
+  font-size: 15px;
+}
+
+legend {
+  color: #000000;
+  text-align: center;
+  font-family: Tenor Sans;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+menu li a {
+  color: #000000;
+  font-family: Tenor Sans;
+  font-size: 25px;
+  margin-top: 7%;
+  margin-left: 20%;
+}
+
+body {
+  background-color: #FFFFFF;
+  background: url('../img/FON.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+a {
+  color: white;
+  font-family: Tenor Sans;
+  font-size: 20px;
+  text-align: center;
+}
+
+article {
+  text-align: center;
+  color: #000000;
+  font-family: Tenor Sans;
+  font-size: 40px;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+footer {
+  margin-top: 4%;
+  background-color: #7B6E6A;
+  color: white;
+  display: block;
+  height: 250px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+address {
+  text-align: center;
+  margin-top: 5%;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  font-family: Tenor Sans;
+  font-size: 20px;
+  margin-top: 1%;
+}
+
+header {
+  width: 100%;
+  margin: 5px auto;
+  height: auto;
+  height: 80px;
+  background-color: #7B6E6A;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+.getRussianWeek{
+	color: white;
+}
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+}
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: #000;
+  grid-gap: 50px;
+}
+
+.interestsBook {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.interestsBook img {
+  height: 230px;
+  width: auto;
+  margin-top: 4%;
+  border: 5px solid #FFFFFF;
+}
+
+.interestsFilm {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.interestsFilm img {
+  text-align: center;
+  height: auto;
+  width: 30%;
+  margin-top: 4%;
+  border: 5px solid #FFFFFF;
+}
+
+#menu a.active{
+	color: #000000;
+}
+
+.sub-menu {
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  color: #FFFFFF;
+  position: absolute;
+  background: #7B6E6A;
+  padding: 10px;
+}
+
+.menu-item {
+  position: relative;
+}
+.logo {
+  width: 200px;
+  float: left;
+  height: 80%;
+}
+
+.logo {
+  display: block;
+  margin-left: 15px;
+  margin-top: 10px;
+  color: white;
+  font-family: Tenor Sans;
+  font-size: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.NV {
+  font-family: Tenor Sans;
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.top-menu {
+  margin: 0 auto;
+  width: 685%;
+  height: 80px;
+  float: left;
+  align-items: center;
+}
+
+.top-menu ul li {
+  display: inline-block;
+  float: left;
+  align-items: center;
+  display: inline-block;
+}
+
+.top-menu ul li a {
+  display: block;
+  width: 171px;
+  text-decoration: none;
+  font-family: Noto Sans;
+  font-size: 14px;
+  color: white;
+  height: 55px;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.calendar-wrapper {
+  position: relative;
+}
+
+#calendar {
+  position: absolute;
+  display: none;
+  width: auto;
+  height: auto;
+  top: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: #9c8e89;
+  color: #fff;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px 0;
+  align-items: center;
+}
+
+#today_day_of_week {
+  margin-left: 20px;
+  padding: 5px 15px;
+  transition: .3s;
+}
+
+#today_day_of_week:hover {
+  cursor: pointer;
+  border-radius: 100px;
+  color: #000;
+  transition: .3s;
+}
+
+
+#calendar select {
+  border: 0;
+  border-radius: 0;
+  width: auto;
+  background-color: #9c8e89;
+  color: #fff;
+  }
+
+#calendar input {
+  width: 60px;
+  border: 0;
+  border-radius: 0;
+  background-color: #9c8e89;
+  color: #fff;
+}
+
+#calendar hr {
+  border: 0;
+  background-color: rgba(156, 142, 137, .5);
+  width: 100%;
+  height: 1px;
+  margin: 0;
+}
+
+#calendar table tbody td {
+  padding: 5px 15px;
+  text-align: center;
+  transition: .3s;
+  border-radius: 100px;
+  margin-left: 10px;
+}
+
+#calendar table tbody td.active {
+  background-color: #ebcfc4;
+}
+
+#calendar table tbody tr:not(.not-hover) td:not(.not-hover):hover {
+  cursor: pointer;
+  transition: .3s;
+  color: #000;
+}
+
+#days {
+  padding: 10px;
+}
+
+.days-of-week {
+  padding-left: 10px;
+}
+
+#tableHistory table.historyActualTime{
+	text-align: center;
+	margin-top: 50px;
+}
+
+#tableHistory.historyAllTime{
+	text-align: justify;
+	border: 10px;
+}

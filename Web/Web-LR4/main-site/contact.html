@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Персональный сайт Шведенко Александра. Контакт</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="menu">
+          <li>
+            <a href="index.html">Главная</a>
+          </li>
+          <li>
+            <a href="aboutMe.html">Обо мне</a>
+          </li>
+          <li class="menu-item">
+            <a href="interests.html">Мои интересы</a>
+            <ul class="sub-menu">
+              <li><a href="interests.html#hobby">Моё хобби</a></li>
+              <li><a href="interests.html#books">Мои любимые книги</a></li>
+              <li><a href="interests.html#films">Мои любимые фильмы</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="education.html">Учёба</a>
+          </li>
+          <li>
+            <a href="album.html">Фотоальбом</a>
+          </li>
+          <li>
+            <a href="contact.html">Контакт</a>
+          </li>
+          <li>
+            <a href="test.html">Тест по дисциплине</a>
+          </li>
+          <li>
+            <a href="history.html">История</a>
+          </li>
+        </ul>
+        <div id="time">00:00:00 1 январь 1970</div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-name">
+        <span>Контакт</span>
+      </section>
+
+      <div class="content-wrapper grey-block">
+        <form
+          class="contact-form"
+          method="post"
+          onsubmit="checkForm(this);return false;"
+        >
+          <div class="modal-wrapper">
+            <div class="modal">
+              <p></p>
+              <div class="modal-btns">
+                <button id="yes_modal" class="main-btn">Да</button>
+                <button id="no_modal" class="main-btn" type="button">
+                  Нет
+                </button>
+              </div>
+            </div>
+            <div class="overlay"></div>
+          </div>
+
+          <div id="tooltip"></div>
+
+          <div class="tooltip" data-tooltip-text="Ваши Фамилия Имя Отчество">
+            <p style="margin-top: 0">ФИО</p>
+            <input type="text" name="fio" id="fio" />
+            <p class="error">Заполните ФИО!</p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваш пол">
+            <p>Пол</p>
+            <p class="radio">
+              <input
+                class="radio-input"
+                type="radio"
+                name="sex"
+                value="m"
+                checked
+              />М
+            </p>
+            <p class="radio">
+              <input class="radio-input" type="radio" name="sex" value="z" />Ж
+            </p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваш возраст">
+            <p>Возраст</p>
+            <select class="" name="age">
+              <option value="">16</option>
+              <option value="">17</option>
+              <option value="">18</option>
+              <option value="">19</option>
+              <option value="">20</option>
+            </select>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваша дата рождения">
+            <div class="calendar-wrapper">
+              <p>Дата рождения</p>
+              <input
+                id="birthday"
+                type="text"
+                name="birthday"
+                onchange="showInputError(this, 'Заполните дату рождения')"
+              />
+              <p class="error"></p>
+              <div id="calendar">
+                <div class="calendar-header">
+                  <div class="left-calendar-header">
+                    <span id="today_day_of_week">Понедельник 1</span>
+                  </div>
+                  <div class="right-calendar-header">
+                    <select class="" name="" id="selectMonth">
+                      <option value="">January</option>
+                      <option value="">February</option>
+                      <option value="">March</option>
+                      <option value="">April</option>
+                      <option value="">May</option>
+                      <option value="">June</option>
+                      <option value="">Jule</option>
+                      <option value="">August</option>
+                      <option value="">September</option>
+                      <option value="">October</option>
+                      <option value="">November</option>
+                      <option value="">December</option>
+                    </select>
+                    <input id="selectYear" type="number" value="2020" />
+                  </div>
+                </div>
+                <hr />
+                <div class="content">
+                  <div id="days">
+                    <table>
+                      <tr class="not-hover">
+                        <td>Mon</td>
+                        <td>Tue</td>
+                        <td>Wed</td>
+                        <td>Thu</td>
+                        <td>Fri</td>
+                        <td>Sat</td>
+                        <td>Sun</td>
+                      </tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваш Email">
+            <p>Email</p>
+            <input
+              type="email"
+              name="email"
+              onchange="showInputError(this, 'Заполните Email')"
+            />
+            <p class="error">Заполните Email!</p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваш текст сообщения">
+            <p>Текст сообщения</p>
+            <textarea
+              name="message"
+              onchange="showInputError(this, 'Введите сообщение')"
+            ></textarea>
+            <p class="error">Введите сообщение!</p>
+          </div>
+
+          <div class="tooltip" data-tooltip-text="Ваш телефон">
+            <p>Телефон</p>
+            <input type="text" name="phone" id="phone" value="+7" />
+            <p class="error">Заполните Телефон!</p>
+            <br />
+          </div>
+
+          <button
+            class="main-btn btn-show-modal"
+            data-modal-text="Отправить данные?"
+            data-btn-type="submit"
+            type="button"
+            name="button"
+          >
+            Отправить
+          </button>
+          <button
+            class="main-btn btn-show-modal"
+            data-modal-text="Стереть данные?"
+            data-btn-type="reset"
+            type="button"
+            name="button"
+          >
+            Очистить форму
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="Libs/jquery.js"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/calendar.js" charset="utf-8"></script>
+    <script src="js/checkForm.js" charset="utf-8"></script>
+  </body>
+</html>

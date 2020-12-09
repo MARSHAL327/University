@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Персональный сайт Шведенко Александра. Тест по дисциплине</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+      <nav>
+          <ul id="menu">
+            <li>
+              <a href="index.html">Главная</a>
+            </li>
+            <li>
+              <a href="aboutMe.html">Обо мне</a>
+            </li>
+            <li class="menu-item">
+              <a href="interests.html">Мои интересы</a>
+              <ul class="sub-menu" >
+                <li> <a href="interests.html#hobby">Моё хобби</a> </li>
+                <li> <a href="interests.html#books">Мои любимые книги</a> </li>
+                <li> <a href="interests.html#films">Мои любимые фильмы</a> </li>
+              </ul>
+            </li>
+            <li>
+              <a href="education.html">Учёба</a>
+            </li>
+            <li>
+              <a href="album.html">Фотоальбом</a>
+            </li>
+            <li>
+              <a href="contact.html">Контакт</a>
+            </li>
+            <li>
+              <a href="test.html">Тест по дисциплине</a>
+            </li>
+            <li>
+                <a href="history.html">История</a>
+              </li>
+          </ul>
+          <div id="time">00:00:00 1 январь 1970</div>
+        </nav>
+  </header>
+  <main>
+    <section class="page-name">
+      <span>Тест по дисциплине (БЖД)</span>
+    </section>
+    <div class="content-wrapper grey-block">
+      <form class="contact-form" action="index.php" method="post">
+        <p>ФИО</p>
+        <input type="text" id="fio" name="fio">
+        <p class="error">Заполните ФИО!</p>
+
+        <p>Группа</p>
+        <select class="" name="age">
+          <optgroup label="1 курс">
+            <option value="">ПИ/б-20-1-о</option>
+          </optgroup>
+          <optgroup label="2 курс">
+            <option value="">ПИ/б-19-1-о</option>
+          </optgroup>
+          <optgroup label="3 курс">
+            <option value="">ПИ/б-18-1-о</option>
+          </optgroup>
+          <optgroup label="4 курс">
+            <option value="">ПИ/б-17-1-о</option>
+          </optgroup>
+        </select>
+
+        <p>1. Что делать при землетрясении?</p>
+        <textarea type="text" id="q_1" name="q_1" onchange="check_q_1(this)"></textarea>
+        <p class="error"></p>
+
+        <p>2. В каком году произошёл взрыв ЧАЭС?</p>
+        <p><input class="radio-input" type="radio" name="q_2" value="" checked>1975</p>
+        <p><input class="radio-input" type="radio" name="q_2" value="">1986</p>
+        <p><input class="radio-input" type="radio" name="q_2" value="">1977</p>
+
+        <p>3. Что нужно делать при пожаре?</p>
+        <select name="q_3">
+          <option value="">Вызвать пожарных</option>
+          <option value="">Залезть под кровать</option>
+        </select>
+
+        <br>
+        <button class="main-btn" type="button" onclick="checkTestForm(this.form)" name="button">Отправить</button>
+        <button class="main-btn" type="reset" name="button">Очистить форму</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+  <script src="js/index.js" charset="utf-8"></script>
+  <script src="js/checkForm.js" charset="utf-8"></script>
+</body>
+</html>
