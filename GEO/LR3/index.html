@@ -25,6 +25,24 @@
         Посчитать
       </button>
     </form>
+    <br /><br /><br />
+    <form action="">
+      <label for="x1">x1 = </label>
+      <input type="text" name="x1" id="x1" /><br /><br />
+      <label for="x2">x2 = </label>
+      <input type="text" name="x2" id="x2" /><br /><br />
+      <label for="y1">y1 = </label>
+      <input type="text" name="y1" id="y1" /><br /><br />
+      <label for="y2">y2 = </label>
+      <input type="text" name="y2" id="y2" /><br /><br />
+      <button
+        type="button"
+        onclick="calc2(+this.form.x1.value, +this.form.x2.value, +this.form.y1.value, +this.form.y2.value)"
+      >
+        Посчитать
+      </button>
+    </form>
+
     <div id="result"></div>
   </body>
   <script src="index.js"></script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/task.js"></script>
+  </head>
+  <body>
+    <style>
+      .error {
+        margin: 0;
+        margin-bottom: 10px;
+        color: red;
+      }
+      .grid {
+        width: 600px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+
+    <form action="">
+      <label for="num_fields">Кол-во измерений</label><br />
+      <input type="text" name="num_fields" id="num_fields" /><br /><br />
+      <button
+        type="button"
+        onclick="generateFields(this.form.num_fields.value)"
+      >
+        Сгенерировать</button
+      ><br /><br /><br />
+    </form>
+    <form action="" id="all_fields"></form>
+  </body>
+</html>

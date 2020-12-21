@@ -1,0 +1,16 @@
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\obj\Debug\Lab5_TPO.csprojAssemblyReference.cache
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\obj\Debug\Lab5_TPO.csproj.CoreCompileInputs.cache
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\Lab5_TPO.exe.config
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\Lab5_TPO.exe
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\Lab5_TPO.pdb
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\nunit.framework.dll
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\nunit.framework.pdb
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\nunit.framework.xml
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\obj\Debug\Lab5_TPO.csproj.CopyComplete
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\obj\Debug\Lab5_TPO.exe
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\obj\Debug\Lab5_TPO.pdb
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\nunit.engine.dll
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\nunit.engine.api.dll
+C:\Users\sanya\Desktop\University\TPO\LR5\Lab5_TPO\bin\Debug\nunit.engine.core.dll

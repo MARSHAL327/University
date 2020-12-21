@@ -16,3 +16,18 @@ function calc(a, b, c) {
     `
 }
 
+function calc2(x1, x2, y1, y2) {
+    let s = 0;
+
+    s = ( (x1 + x2) / 2 ) * (Math.abs(y1 - y2));
+
+    result.innerHTML = 
+    `x1 = ${x1} <br>
+    x2 = ${x2} <br>
+    y1 = ${y1} <br>
+    y2 = ${y2} <br>
+    <br><br>
+    s = ${s}
+    `
+}
+
