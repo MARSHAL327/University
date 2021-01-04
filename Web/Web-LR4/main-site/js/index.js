@@ -24,27 +24,23 @@ function generateSection(object) {
 }
 
 // ============Подменю============
-let el = document.getElementsByClassName('menu-item');
-
-for (let i = 0; i < el.length; i++) {
-    el[i].addEventListener("mouseenter", showSubMenu, false);
-    el[i].addEventListener("mouseleave", hideSubMenu, false);
-}
+$(".menu-item").on("mouseenter", showSubMenu);
+$(".menu-item").on("mouseleave", hideSubMenu);
 
 function showSubMenu(e) {
-    if (this.children.length > 1) {
-        this.children[1].style.display = "grid";
+    if ($(this).children().length > 1) {
+      $(this).find(".sub-menu").css("display", "grid");
     } else {
         return false;
     }
 }
 
 function hideSubMenu(e) {
-    if (this.children.length > 1) {
-        this.children[1].style.display = "none";
-    } else {
-        return false;
-    }
+  if ($(this).children().length > 1) {
+    $(this).find(".sub-menu").css("display", "none");
+  } else {
+      return false;
+  }
 }
 
 
@@ -71,8 +67,9 @@ let timerId = setInterval(() => {
   drawTime();
 }, 1000);
 
-window.onload = function() {
+$(document).ready(function () {
   let thisHistory, globalHistory;
+  
   let pathname = document.location.pathname; // адрес текущей страницы
   pathname = pathname.slice(pathname.lastIndexOf("/") + 1, pathname.length);
 
@@ -81,14 +78,14 @@ window.onload = function() {
   saveGlobalHistory(pathname);
   if( pathname == "history.html" ) drawHistoryTable();
   
-  for (let i = 0; i < menu.children.length; i++) {
-    let thisURL = menu.children[i].children[0];
+  $("#menu li").each(function () {
+    let thisURL = $(this).children().first();
 
-    if( thisURL.getAttribute("href") == pathname ){
-      thisURL.classList.add("active");
+    if( thisURL.attr("href") == pathname ){
+      thisURL.addClass("active");
     }
-  }
-}
+  })
+})
 
 // =================История просмотра================
 function saveThisHistory(pathname) {
@@ -115,16 +112,16 @@ function saveGlobalHistory(pathname) {
 
 // Рисуем таблицу для истории
 function drawHistoryTable() {
-  for (let i = 0; i < menu.children.length; i++) {
-    let link = menu.children[menu.children.length - i - 1].children[0];
-    let linkSrc = link.getAttribute("href");
+  $("#menu li").each(function () {
+    let link = $(this).children().first();
+    let linkSrc = link.attr("href");
 
-    history_table.children[0].insertAdjacentHTML("afterend",
+    $("#history_table").children()[0].insertAdjacentHTML("afterend",
     `<tr>
-      <td>${link.innerHTML}</td>
+      <td>${link.text()}</td>
       <td>${thisHistory[linkSrc] || "0"}</td>
       <td>${globalHistory[linkSrc] || "0"}</td>
     </tr>
     `);
-  }
+  });
 }

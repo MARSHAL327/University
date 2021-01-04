@@ -1,7 +1,5 @@
-let a = 2;
-
-birthday.addEventListener("click", () => {
-  calendar.style.display = calendar.style.display == "block" ? "none" : "block";
+$("#birthday").on("click", () => {
+  $("#calendar").toggleClass("active");
 });
 
 daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -27,10 +25,9 @@ function DrawCalendar(year, month) {
   }
 
   // Очищаем календарь
-  days.children[0].remove();
-
+  $("#days").children().remove();
   // Формируем календарь
-  days.insertAdjacentHTML("beforeend", `
+  $("#days").append(`
   <table>
   <tr class="not-hover">
     <td>Mon</td>
@@ -54,60 +51,51 @@ function DrawCalendar(year, month) {
     for (let j = lastDayOfWeek; j < dayInSelectedMonth; j++) {
       lastDayOfWeek = j + 1;
       day = j - spacesDay;
-      let classes = "";
+      let createdTD =  $( `<td>${(spacesDay + 1 > j ? "" : day)}</td>` );
 
       if( day == date.getDate() && month == date.getMonth() && year == date.getFullYear() ){
-        classes += "active";
-      }
-      if( spacesDay + 1 > j ){
-        classes += " not-hover";
-      } else {
-        classes += " clicked";
+        createdTD.addClass("active");
       }
 
-      days
-      .children[0]
-      .children[0]
-      .children[i + 1]
-      .insertAdjacentHTML("beforeend", "<td class='" + classes + "'>" + (spacesDay + 1 > j ? "" : day));
+      if( spacesDay + 1 > j ){
+        createdTD.addClass("not-hover");
+      } else {
+        createdTD.addClass("clicked");
+      }
+
+      $("#days tr").eq(i + 1).append(createdTD);
+
       if( j % 7 == 0 && j != 0 ) break;
     }
   }
 
-  // Если кликунли на дату
-  let clickDate = document.getElementsByClassName("clicked");
+  $(".clicked").on("click", function(){  
+    let day = $(this).text();
+    let month = $("#selectMonth")[0].selectedIndex + 1;
+    let year = $("#selectYear").val();
 
-  for (let i = 0; i < clickDate.length; i++) {
-    clickDate[i].addEventListener("click", function(){
-      let day = this.innerHTML,
-      month = selectMonth.options.selectedIndex + 1,
-      year = selectYear.value;
+    day < 10 ? day = "0" + day : day;
+    month < 10 ? month = "0" + month : month;
+    year < 10 ? year = "0" + year : year;
 
-      day < 10 ? day = "0" + day : day;
-      month < 10 ? month = "0" + month : month;
-      year < 10 ? year = "0" + year : year;
-
-      birthday.value = day + "."  + month + "." + year;
-      calendar.style.display = calendar.style.display == "block" ? "none" : "block";
-    })
-  }
+    $("#birthday").val( day + "."  + month + "." + year );
+    $("#calendar").removeClass("active");
+  })
 }
 
-selectMonth.addEventListener("change", () => {
-  DrawCalendar(selectYear.value, selectMonth.options.selectedIndex)
-})
+$(document).ready(function () {
+  $("#selectYear, #selectMonth").on("change", () => {
+    DrawCalendar( $("#selectYear").val(), $("#selectMonth")[0].selectedIndex );
+  })
 
-selectYear.addEventListener("change", () => {
-  DrawCalendar(selectYear.value, selectMonth.options.selectedIndex)
-})
+  $("#today_day_of_week").on("click", () => {
+    DrawCalendar(date.getFullYear(), date.getMonth());
+    $("#selectMonth")[0].selectedIndex = date.getMonth();
+    $("#selectYear").val( date.getFullYear() );
+  })
 
-today_day_of_week.addEventListener("click", () => {
   DrawCalendar(date.getFullYear(), date.getMonth());
-  selectMonth.options.selectedIndex = date.getMonth();
-  selectYear.value = date.getFullYear();
+  $("#selectMonth")[0].selectedIndex = date.getMonth();
+  $("#selectYear").val( date.getFullYear() );
+  $("#today_day_of_week").html(daysOfWeek[date.getDay() - 1] + " " + date.getDate());
 })
-
-DrawCalendar(date.getFullYear(), date.getMonth());
-selectMonth.options.selectedIndex = date.getMonth();
-selectYear.value = date.getFullYear();
-today_day_of_week.innerHTML = daysOfWeek[date.getDay() - 1] + " " + date.getDate();

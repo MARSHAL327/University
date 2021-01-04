@@ -4,7 +4,7 @@ let checkInput = inputValue => { return inputValue.trim() === "" ? true : false}
 let errors = {};
 
 let showInputError = (input, errorMessage) => {
-  if( checkInput(input.value) ){
+  if( checkInput(input.val()) ){
     showError(input, errorMessage);
     errors.input = true;
   } else{
@@ -13,9 +13,21 @@ let showInputError = (input, errorMessage) => {
   }
 }
 
+$("input, select, textarea").on("change", function () {
+  showInputError($(this), $(this).attr("data-error-text"));
+})
+
+$("#fio").on("change", function () {
+  checkFio( $(this) );
+})
+
+$("#phone").on("change", function () {
+  checkPhone( $(this) );
+})
+
 // =======проверка ФИО=======
 function checkFio(fio) {
-  if( checkInput(fio.value) || fio.value.trim().split(' ').length != 3 ){
+  if( checkInput(fio.val()) || fio.val().trim().split(' ').length != 3 ){
     showError(fio, "ФИО неверно");
     errors.fio = true;
   } else {
@@ -24,27 +36,21 @@ function checkFio(fio) {
   }
 }
 
-if( document.getElementById("fio") !== null ){
-  fio.addEventListener("change", (e) => {
-    checkFio(e.target);
-  })
-}
-
 // =======проверка телефона=======
 function checkPhone(phone){
-  if( checkInput(phone.value) ){
+  if( checkInput(phone.val()) ){
     showError(phone, "Заполните поле телефон!");
     errors.phone = true;
-  } else if (phone.value.substr(0, 2) != "+3" && phone.value.substr(0, 2) != "+7") {
+  } else if (phone.val().substr(0, 2) != "+3" && phone.val().substr(0, 2) != "+7") {
     showError(phone, "Неверный код страны");
     errors.phone = true;
-  } else if (phone.value.length - 1 < 10 || phone.value.length - 1 > 12) {
+  } else if (phone.val().length - 1 < 10 || phone.val().length - 1 > 12) {
       showError(phone, "Неверная длина телефона");
       errors.phone = true;
-  } else if (isNaN(phone.value.substr(2, 11))) {
+  } else if (isNaN(phone.val().substr(2, 11))) {
       showError(phone, "Вводить можно только цифры");
       errors.phone = true;
-  } else if (phone.value.substr(2, 11).includes(" ")) {
+  } else if (phone.val().substr(2, 11).includes(" ")) {
       showError(phone, "Нельзя вводить пробелы");
       errors.phone = true;
   } else {
@@ -53,53 +59,35 @@ function checkPhone(phone){
   }
 }
 
-if( document.getElementById("phone") !== null ){
-  phone.addEventListener("change", (e) => {
-    checkPhone(e.target);
-  });
-}
-
 // =======показываем ошибку=======
 function showError(field, errorMessage) {
-  let errorText = field.nextElementSibling;
+  let errorText = field.next();
 
-  errorText.style.display = "block";
-  field.style.borderColor = "#D32F2F";
-  errorText.innerHTML = errorMessage;
+  errorText.css("display", "block");
+  field.css("borderColor", "#D32F2F");
+  errorText.html(errorMessage);
   field.focus();
 }
 
 // =======скрываем ошибку=======
 function hideError(field) {
-  let errorText = field.nextElementSibling;
+  let errorText = field.next();
 
-  field.style.borderColor = "#000";
-  field.style.borderColor = "green";
-  errorText.style.display = "none";
+  field.css("borderColor", "green");
+  errorText.css("display", "none");
 }
 
-// =======проверяем форму целиком=======
-function checkForm(form) {
-    let fio = form.fio;
-    let phone = form.phone;
-    let email = form.email;
-    let message = form.message;
-    let birthday = form.birthday;
-
-    checkFio(fio);
-    showInputError(birthday, "Введите дату рождения");
-    showInputError(email, "Введите Email");
-    showInputError(message, "Введите сообщение");
-    checkPhone(phone);
-    
-    if( errors.length === 0 ){
-      form.submit();
-    }
+// =======скрываем все ошибки=======
+function hideAllError() {
+  $(".contact-form input, .contact-form select, .contact-form textarea").each(function () {
+    hideError($(this));
+    $(this).css("borderColor", "black");
+  })
 }
 
 // =======проверяем первый вопрос из теста=======
 function check_q_1(q_1){
-  let q_value = q_1.value;
+  let q_value = q_1.val();
 
   hideError(q_1);
   if( checkInput(q_value) ){
@@ -111,57 +99,77 @@ function check_q_1(q_1){
   }
 }
 
+$("#q_1").on("change", function () {
+  check_q_1($(this));
+})
+
 // =======проверяем форму теста =======
-function checkTestForm(form){
-  let q_1 = form.q_1;
-  let fio = form.fio;
+function checkTestForm(){
+  let q_1 = $("#q_1");
+  let fio = $("#fio");
 
   check_q_1(q_1);
   checkFio(fio);
 
-  if( errors.length === 0 ){
-    form.submit();
+  if( Object.keys(errors).length === 0 ){
+    $(".contact-form")[0].submit();
   }
 }
 
 // =======МОДАЛЬНОЕ ОКНО=======
-function showModal(modalText, btnType){
+function showModal(modalText, btnCallback){
   $(".modal-wrapper").addClass("active");
   $(".modal-wrapper p").text(modalText);
-  $(".modal-wrapper #yes_modal").attr("type", btnType);
+  $("#yes_modal").on("click", btnCallback);
 }
 
 function hideModal(){
   $(".modal-wrapper").removeClass("active");
+  $("#yes_modal").off("click");
+}
+
+function resetForm() {
+  $(".contact-form")[0].reset();
+  hideAllError();
+}
+
+// =======проверяем форму целиком=======
+function sendForm() {
+  let fio = $("#fio");
+  let phone = $("#phone");
+  let email = $("#email");
+  let message = $("#message");
+  let birthday = $("#birthday");
+
+  checkFio(fio);
+  showInputError(birthday, birthday.attr("data-error-text"));
+  showInputError(email, email.attr("data-error-text"));
+  showInputError(message, message.attr("data-error-text"));
+  checkPhone(phone);
+
+  if( Object.keys(errors).length == 0 ){
+    $(".contact-form")[0].submit();
+  }
 }
 
 $(".btn-show-modal").on("click", function(){
-  let modalText = $(this).data("modal-text");
-  let btnType = $(this).data("btn-type");
+  let modalText = $(this).attr("data-modal-text");
+  let callback = $(this).attr("data-btn-callback");
 
-  showModal(modalText, btnType);
+  showModal(modalText, eval(callback));
 });
 
 $(".modal-btns button, .overlay").on("click", function() {
   hideModal();
 })
 
-$("[data-tooltip-text]").mousemove(function (e) {
-  $data_tooltip = $(this).attr("data-tooltip-text");
-  
-  $("#tooltip").text($data_tooltip)
-               .css({ 
-                   "top" : e.pageY + 5,
-                  "left" : e.pageX + 5
-               })
-               .show();
+$(".tooltip").on("mouseenter", function() {
+  $(this).find(".tooltip-block").text( $(this).attr("data-tooltip-text") );
+  $(this).find(".tooltip-block").addClass("active");
+})
 
-}).mouseout(function () {
-
-$("#tooltip").hide()
-              .text("")
-              .css({
-                  "top" : 0,
-                "left" : 0
-              });
-});
+$(".tooltip").on("mouseleave", function() {
+  setTimeout(() => {
+    $(this).find(".tooltip-block").removeClass("active");
+  }, 1000);
+})

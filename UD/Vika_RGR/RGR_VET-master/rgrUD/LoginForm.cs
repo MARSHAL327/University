@@ -15,6 +15,8 @@ namespace rgrUD
     {
         string login;
         string password;
+        DB db;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -73,7 +75,7 @@ namespace rgrUD
             login = loginField.Text;
             password = passField.Text;
 
-            DB db = new DB();
+            db = new DB();
 
             try
             {
@@ -87,7 +89,6 @@ namespace rgrUD
                         throw new Exception("Неправильный логин или пароль!");
                     }
 
-                    db.SelectAllTables();
                     db.CloseConnection();
                 }
             } catch (Exception ex) {
@@ -98,10 +99,22 @@ namespace rgrUD
             if (!failed)
             {
                 this.Hide();
-                ComandForm CF = new ComandForm(db.AllTables);
-                CF.Show();
-            }
+                using (db.getConnection())
+                {
+                    db.OpenConnection();
+                    db.allOwners = db.GetDictionary("SELECT `id`, `ФИО` FROM owner");
+                    db.allVeterinarian = db.GetDictionary("SELECT `id`, `FIO` FROM veterinarian");
+                    db.allSex = db.GetDictionary("SELECT `id`, `sex` FROM sex");
+                    db.allDiagnosis = db.GetDictionary("SELECT `id`, `name` FROM diagnosis");
+                    db.allDrug = db.GetDictionary("SELECT `id`, `name` FROM drug");
+                    db.allPets = db.GetDictionary("SELECT `id`, pet.`Кличка` FROM pet");
+                    db.allTreatments = db.GetDictionary("SELECT `id`, treatment.`Предписание` FROM treatment");
+                    db.SelectAllTables();
 
+                    ComandForm CF = new ComandForm(db);
+                    CF.Show();
+                }
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

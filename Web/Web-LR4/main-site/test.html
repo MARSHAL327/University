@@ -5,6 +5,7 @@
     <title>Персональный сайт Шведенко Александра. Тест по дисциплине</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="Libs/jquery.js"></script>
   </head>
   <body>
     <header>
@@ -48,17 +49,14 @@
         <span>Тест по дисциплине (БЖД)</span>
       </section>
       <div class="content-wrapper grey-block">
-        <form
-          class="contact-form"
-          action="index.php"
-          method="post"
-          onsubmit="checkTestForm(this);return false;"
-        >
+        <form class="contact-form" action="index.php" method="post">
           <div class="modal-wrapper">
             <div class="modal">
               <p></p>
               <div class="modal-btns">
-                <button id="yes_modal" class="main-btn">Да</button>
+                <button id="yes_modal" class="main-btn" type="button">
+                  Да
+                </button>
                 <button id="no_modal" class="main-btn" type="button">
                   Нет
                 </button>
@@ -95,12 +93,7 @@
 
           <div class="tooltip" data-tooltip-text="Первый вопрос">
             <p>1. Что делать при землетрясении?</p>
-            <textarea
-              type="text"
-              id="q_1"
-              name="q_1"
-              onchange="check_q_1(this)"
-            ></textarea>
+            <textarea type="text" id="q_1" name="q_1"></textarea>
             <p class="error"></p>
           </div>
 
@@ -132,18 +125,20 @@
           </div>
 
           <button
+            id="sendBtn"
             class="main-btn btn-show-modal"
             data-modal-text="Отправить данные?"
-            data-btn-type="submit"
+            data-btn-callback="checkTestForm"
             type="button"
             name="button"
           >
             Отправить
           </button>
           <button
+            id="resetBtn"
             class="main-btn btn-show-modal"
             data-modal-text="Стереть данные?"
-            data-btn-type="reset"
+            data-btn-callback="resetForm"
             type="button"
             name="button"
           >
@@ -153,7 +148,6 @@
       </div>
     </main>
     <footer></footer>
-    <script src="Libs/jquery.js"></script>
     <script src="js/index.js" charset="utf-8"></script>
     <script src="js/checkForm.js" charset="utf-8"></script>
   </body>
