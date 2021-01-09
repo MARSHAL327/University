@@ -1,0 +1,115 @@
+!!!
+%html{:dir => "ltr", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Персональный сайт Шведенко Александра. Контакт
+    %link{:href => "css/reset.css", :rel => "stylesheet"}/
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    %script{:src => "Libs/jquery.js"}
+  %body
+    = Haml::Engine.new(File.read('./header.haml')).render
+    %main
+      %section.page-name
+        %span Контакт
+      .content-wrapper.grey-block
+        %form.contact-form{:method => "post"}
+          .modal-wrapper
+            .modal
+              %p
+              .modal-btns
+                %button#yes_modal.main-btn{:type => "button"}
+                  Да
+                %button#no_modal.main-btn{:type => "button"}
+                  Нет
+            .overlay
+          .tooltip{"data-tooltip-text" => "Ваши Фамилия Имя Отчество"}
+            %p{:style => "margin-top: 0"} ФИО
+            %input#fio{"data-error-text" => "Заполните ФИО!", :name => "fio", :type => "text"}/
+            %p.error Заполните ФИО!
+            .tooltip-block
+          .tooltip{"data-tooltip-text" => "Ваш пол"}
+            %p Пол
+            %p.radio
+              %input.radio-input{:checked => "checked", :name => "sex", :type => "radio", :value => "m"}>/
+              М
+            %p.radio
+              %input.radio-input{:name => "sex", :type => "radio", :value => "z"}>/
+              Ж
+            .tooltip-block
+          .tooltip{"data-tooltip-text" => "Ваш возраст"}
+            %p Возраст
+            %select{:name => "age"}
+              %option{:value => ""} 16
+              %option{:value => ""} 17
+              %option{:value => ""} 18
+              %option{:value => ""} 19
+              %option{:value => ""} 20
+            .tooltip-block
+          .tooltip{"data-tooltip-text" => "Ваша дата рождения"}
+            .calendar-wrapper
+              %p Дата рождения
+              %input#birthday{"data-error-text" => "Заполните дату рождения", :name => "birthday", :type => "text"}/
+              %p.error
+              #calendar
+                .calendar-header
+                  .left-calendar-header
+                    %span#today_day_of_week Понедельник 1
+                  .right-calendar-header
+                    %select#selectMonth{:name => ""}
+                      %option{:value => ""} January
+                      %option{:value => ""} February
+                      %option{:value => ""} March
+                      %option{:value => ""} April
+                      %option{:value => ""} May
+                      %option{:value => ""} June
+                      %option{:value => ""} Jule
+                      %option{:value => ""} August
+                      %option{:value => ""} September
+                      %option{:value => ""} October
+                      %option{:value => ""} November
+                      %option{:value => ""} December
+                    %input#selectYear{:type => "number", :value => "2020"}/
+                %hr/
+                .content
+                  #days
+                    %table
+                      %tr.not-hover
+                        %td Mon
+                        %td Tue
+                        %td Wed
+                        %td Thu
+                        %td Fri
+                        %td Sat
+                        %td Sun
+                      %tr
+                      %tr
+                      %tr
+                      %tr
+                      %tr
+                      %tr
+            .tooltip-block
+          .tooltip{"data-tooltip-text" => "Ваш Email"}
+            %p Email
+            %input#email{"data-error-text" => "Заполните Email", :name => "email", :type => "email"}/
+            %p.error Заполните Email!
+            .tooltip-block
+          .tooltip{"data-tooltip-text" => "Ваш текст сообщения"}
+            %p Текст сообщения
+            %textarea#message{"data-error-text" => "Введите сообщение", :name => "message"}
+            %p.error Введите сообщение!
+            .tooltip-block
+          .tooltip{"data-tooltip-text" => "Ваш телефон"}
+            %p Телефон
+            %input#phone{"data-error-text" => "Заполните Телефон", :name => "phone", :type => "text", :value => "+7"}/
+            %p.error Заполните Телефон!
+            %br/
+            .tooltip-block
+          %button#sendBtn.main-btn.btn-show-modal{"data-btn-callback" => "sendForm", "data-modal-text" => "Отправить данные?", :name => "button", :type => "button"}
+            Отправить
+          %button#resetBtn.main-btn.btn-show-modal{"data-btn-callback" => "resetForm", "data-modal-text" => "Стереть данные?", :name => "button", :type => "button"}
+            Очистить форму
+    %footer
+    %script{:src => "Libs/jquery.js"}
+    %script{:charset => "utf-8", :src => "js/index.js"}
+    %script{:charset => "utf-8", :src => "js/calendar.js"}
+    %script{:charset => "utf-8", :src => "js/checkForm.js"}

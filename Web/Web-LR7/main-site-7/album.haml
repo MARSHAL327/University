@@ -1,0 +1,41 @@
+!!!
+%html{:dir => "ltr", :lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title Персональный сайт Шведенко Александра. Фотоальбом
+    %link{:href => "css/reset.css", :rel => "stylesheet"}/
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    %script{:src => "Libs/jquery.js"}
+    %script{:charset => "utf-8", :src => "js/index.js"}
+    %script{:charset => "utf-8", :src => "js/album.js"}
+  %body
+    = Haml::Engine.new(File.read('./header.haml')).render
+    %main
+      %section.page-name
+        %span Фотоальбом
+      .wrapper_album_img
+        #black_bg
+        #album_img
+          %img{:alt => "", :src => ""}/
+          %span
+          .next-img
+            %span ᐳ
+          .prev-img
+            %span ᐸ
+          .count-img
+            Фото
+            %span.num-this-img 1
+            из
+            %span.total-count
+          .close X
+      .content-wrapper.grey-block.album
+        -titles = ['Рисунок 1 Подпись 1', 'Рисунок 2 Подпись 2', 'Рисунок 3 Подпись 3', 'Рисунок 4 Подпись 4', 'Рисунок 5 Подпись 5', 'Рисунок 6 Подпись 6', 'Рисунок 7 Подпись 7', 'Рисунок 8 Подпись 8', 'Рисунок 9 Подпись 9', 'Рисунок 10 Подпись 10', 'Рисунок 11 Подпись 11', 'Рисунок 12 Подпись 12', 'Рисунок 13 Подпись 13', 'Рисунок 14 Подпись 14', 'Рисунок 15 Подпись 15'];
+
+        -fotos = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg","img/10.jpg","img/11.jpg","img/12.jpg","img/13.jpg","img/14.jpg","img/15.jpg"];
+
+        -titles.each_with_index do |item, i|
+          %figure
+            %img.foto_img{:"data-img-id" => "#{i}", :src => "#{fotos[i]}", :title => "#{titles[i]}"}
+            %figcaption #{item}
+    %footer

@@ -1,0 +1,23 @@
+!!!
+%html{:dir => "ltr", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Персональный сайт Шведенко Александра. Главная страница
+    %link{:href => "css/reset.css", :rel => "stylesheet"}/
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    %script{:src => "Libs/jquery.js"}
+  %body
+    = Haml::Engine.new(File.read('./header.haml')).render
+    %main
+      %frame{:src => "https://vk.com/"}/
+      %section.page-name
+        %span Главная
+      .content-wrapper
+        .person-info-wrapper.grey-block
+          %img{:alt => "", :src => "img/eeEgrrRIERE.jpg"}/
+          .person-info
+            %p Шведенко Александр Сергеевич
+            %p ПИ/б-18-1-о
+            %p Лабораторная работа №1. Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS
+    %footer
+    %script{:charset => "utf-8", :src => "js/index.js"}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8">
+<title>Персональный сайт Шведенко Александра. Контакт</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<script src="Libs/jquery.js"></script>
+</head>
+<body>
+<header>
+<nav>
+<ul id='menu'>
+<li>
+<a href='index.html'>Главная</a>
+</li>
+<li>
+<a href='aboutMe.html'>Обо мне</a>
+</li>
+<li class='menu-item'>
+<a href='interests.html'>Мои интересы</a>
+</li>
+<ul class='sub-menu'>
+<li>
+<a href='interests.html#hobby'>Моё хобби</a>
+</li>
+<li>
+<a href='interests.html#books'>Мои любимые книги</a>
+</li>
+<li>
+<a href='interests.html#films'>Мои любимые фильмы</a>
+</li>
+</ul>
+<li>
+<a href='education.html'>Учёба</a>
+</li>
+<li>
+<a href='album.html'>Фотоальбом</a>
+</li>
+<li>
+<a href='contact.html'>Контакт</a>
+</li>
+<li>
+<a href='test.html'>Тест по дисциплине</a>
+</li>
+<li>
+<a href='history.html'>История</a>
+</li>
+</ul>
+<div id='time'>00:00:00 1 январь 1970</div>
+</nav>
+</header>
+
+<main>
+<section class="page-name">
+<span>Контакт</span>
+</section>
+<div class="content-wrapper grey-block">
+<form class="contact-form" method="post">
+<div class="modal-wrapper">
+<div class="modal">
+<p></p>
+<div class="modal-btns">
+<button class="main-btn" id="yes_modal" type="button">
+Да
+</button>
+<button class="main-btn" id="no_modal" type="button">
+Нет
+</button>
+</div>
+</div>
+<div class="overlay"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваши Фамилия Имя Отчество">
+<p style="margin-top: 0">ФИО</p>
+<input data-error-text="Заполните ФИО!" id="fio" name="fio" type="text">
+<p class="error">Заполните ФИО!</p>
+<div class="tooltip-block"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваш пол">
+<p>Пол</p>
+<p class="radio"><input checked="checked" class="radio-input" name="sex" type="radio" value="m">М
+</p>
+<p class="radio"><input class="radio-input" name="sex" type="radio" value="z">Ж
+</p>
+<div class="tooltip-block"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваш возраст">
+<p>Возраст</p>
+<select name="age">
+<option value="">16</option>
+<option value="">17</option>
+<option value="">18</option>
+<option value="">19</option>
+<option value="">20</option>
+</select>
+<div class="tooltip-block"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваша дата рождения">
+<div class="calendar-wrapper">
+<p>Дата рождения</p>
+<input data-error-text="Заполните дату рождения" id="birthday" name="birthday" type="text">
+<p class="error"></p>
+<div id="calendar">
+<div class="calendar-header">
+<div class="left-calendar-header">
+<span id="today_day_of_week">Понедельник 1</span>
+</div>
+<div class="right-calendar-header">
+<select id="selectMonth" name="">
+<option value="">January</option>
+<option value="">February</option>
+<option value="">March</option>
+<option value="">April</option>
+<option value="">May</option>
+<option value="">June</option>
+<option value="">Jule</option>
+<option value="">August</option>
+<option value="">September</option>
+<option value="">October</option>
+<option value="">November</option>
+<option value="">December</option>
+</select>
+<input id="selectYear" type="number" value="2020">
+</div>
+</div>
+<hr>
+<div class="content">
+<div id="days">
+<table>
+<tr class="not-hover">
+<td>Mon</td>
+<td>Tue</td>
+<td>Wed</td>
+<td>Thu</td>
+<td>Fri</td>
+<td>Sat</td>
+<td>Sun</td>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="tooltip-block"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваш Email">
+<p>Email</p>
+<input data-error-text="Заполните Email" id="email" name="email" type="email">
+<p class="error">Заполните Email!</p>
+<div class="tooltip-block"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваш текст сообщения">
+<p>Текст сообщения</p>
+<textarea data-error-text="Введите сообщение" id="message" name="message"></textarea>
+<p class="error">Введите сообщение!</p>
+<div class="tooltip-block"></div>
+</div>
+<div class="tooltip" data-tooltip-text="Ваш телефон">
+<p>Телефон</p>
+<input data-error-text="Заполните Телефон" id="phone" name="phone" type="text" value="+7">
+<p class="error">Заполните Телефон!</p>
+<br>
+<div class="tooltip-block"></div>
+</div>
+<button class="main-btn btn-show-modal" data-btn-callback="sendForm" data-modal-text="Отправить данные?" id="sendBtn" name="button" type="button">
+Отправить
+</button>
+<button class="main-btn btn-show-modal" data-btn-callback="resetForm" data-modal-text="Стереть данные?" id="resetBtn" name="button" type="button">
+Очистить форму
+</button>
+</form>
+</div>
+</main>
+<footer></footer>
+<script src="Libs/jquery.js"></script>
+<script charset="utf-8" src="js/index.js"></script>
+<script charset="utf-8" src="js/calendar.js"></script>
+<script charset="utf-8" src="js/checkForm.js"></script>
+</body>
+</html>

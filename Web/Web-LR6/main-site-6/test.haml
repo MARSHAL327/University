@@ -1,0 +1,67 @@
+!!!
+%html{:dir => "ltr", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Персональный сайт Шведенко Александра. Тест по дисциплине
+    %link{:href => "css/reset.css", :rel => "stylesheet"}/
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    %script{:src => "Libs/jquery.js"}
+  %body
+    = Haml::Engine.new(File.read('./header.haml')).render
+    %main
+      %section.page-name
+        %span Тест по дисциплине (БЖД)
+      .content-wrapper.grey-block
+        %form.contact-form{:action => "index.php", :method => "post"}
+          .modal-wrapper
+            .modal
+              %p
+              .modal-btns
+                %button#yes_modal.main-btn{:type => "button"}
+                  Да
+                %button#no_modal.main-btn{:type => "button"}
+                  Нет
+            .overlay
+          #tooltip
+          .tooltip{"data-tooltip-text" => "Ваши Фамилия Имя Отчество"}
+            %p{:style => "margin-top: 0"} ФИО
+            %input#fio{:name => "fio", :type => "text"}/
+            %p.error Заполните ФИО!
+          .tooltip{"data-tooltip-text" => "Ваша группа"}
+            %p Группа
+            %select{:name => "age"}
+              %optgroup{:label => "1 курс"}
+                %option{:value => ""} ПИ/б-20-1-о
+              %optgroup{:label => "2 курс"}
+                %option{:value => ""} ПИ/б-19-1-о
+              %optgroup{:label => "3 курс"}
+                %option{:value => ""} ПИ/б-18-1-о
+              %optgroup{:label => "4 курс"}
+                %option{:value => ""} ПИ/б-17-1-о
+          .tooltip{"data-tooltip-text" => "Первый вопрос"}
+            %p 1. Что делать при землетрясении?
+            %textarea#q_1{:name => "q_1", :type => "text"}
+            %p.error
+          .tooltip{"data-tooltip-text" => "Второй вопрос"}
+            %p 2. В каком году произошёл взрыв ЧАЭС?
+            %p
+              %input.radio-input{:checked => "checked", :name => "q_2", :type => "radio", :value => ""}>/
+              1975
+            %p
+              %input.radio-input{:name => "q_2", :type => "radio", :value => ""}>/
+              1986
+            %p
+              %input.radio-input{:name => "q_2", :type => "radio", :value => ""}>/
+              1977
+          .tooltip{"data-tooltip-text" => "Третий вопрос"}
+            %p 3. Что нужно делать при пожаре?
+            %select{:name => "q_3"}
+              %option{:value => ""} Вызвать пожарных
+              %option{:value => ""} Залезть под кровать
+          %button#sendBtn.main-btn.btn-show-modal{"data-btn-callback" => "checkTestForm", "data-modal-text" => "Отправить данные?", :name => "button", :type => "button"}
+            Отправить
+          %button#resetBtn.main-btn.btn-show-modal{"data-btn-callback" => "resetForm", "data-modal-text" => "Стереть данные?", :name => "button", :type => "button"}
+            Очистить форму
+    %footer
+    %script{:charset => "utf-8", :src => "js/index.js"}
+    %script{:charset => "utf-8", :src => "js/checkForm.js"}

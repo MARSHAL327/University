@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8">
+<title>Персональный сайт Шведенко Александра. Тест по дисциплине</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<script src="Libs/jquery.js"></script>
+</head>
+<body>
+<header>
+<nav>
+<ul id='menu'>
+<li>
+<a href='index.html'>Главная</a>
+</li>
+<li>
+<a href='aboutMe.html'>Обо мне</a>
+</li>
+<li class='menu-item'>
+<a href='interests.html'>Мои интересы</a>
+</li>
+<ul class='sub-menu'>
+<li>
+<a href='interests.html#hobby'>Моё хобби</a>
+</li>
+<li>
+<a href='interests.html#books'>Мои любимые книги</a>
+</li>
+<li>
+<a href='interests.html#films'>Мои любимые фильмы</a>
+</li>
+</ul>
+<li>
+<a href='education.html'>Учёба</a>
+</li>
+<li>
+<a href='album.html'>Фотоальбом</a>
+</li>
+<li>
+<a href='contact.html'>Контакт</a>
+</li>
+<li>
+<a href='test.html'>Тест по дисциплине</a>
+</li>
+<li>
+<a href='history.html'>История</a>
+</li>
+</ul>
+<div id='time'>00:00:00 1 январь 1970</div>
+</nav>
+</header>
+
+<main>
+<section class="page-name">
+<span>Тест по дисциплине (БЖД)</span>
+</section>
+<div class="content-wrapper grey-block">
+<form action="index.php" class="contact-form" method="post">
+<div class="modal-wrapper">
+<div class="modal">
+<p></p>
+<div class="modal-btns">
+<button class="main-btn" id="yes_modal" type="button">
+Да
+</button>
+<button class="main-btn" id="no_modal" type="button">
+Нет
+</button>
+</div>
+</div>
+<div class="overlay"></div>
+</div>
+<div id="tooltip"></div>
+<div class="tooltip" data-tooltip-text="Ваши Фамилия Имя Отчество">
+<p style="margin-top: 0">ФИО</p>
+<input id="fio" name="fio" type="text">
+<p class="error">Заполните ФИО!</p>
+</div>
+<div class="tooltip" data-tooltip-text="Ваша группа">
+<p>Группа</p>
+<select name="age">
+<optgroup label="1 курс">
+<option value="">ПИ/б-20-1-о</option>
+</optgroup>
+<optgroup label="2 курс">
+<option value="">ПИ/б-19-1-о</option>
+</optgroup>
+<optgroup label="3 курс">
+<option value="">ПИ/б-18-1-о</option>
+</optgroup>
+<optgroup label="4 курс">
+<option value="">ПИ/б-17-1-о</option>
+</optgroup>
+</select>
+</div>
+<div class="tooltip" data-tooltip-text="Первый вопрос">
+<p>1. Что делать при землетрясении?</p>
+<textarea id="q_1" name="q_1" type="text"></textarea>
+<p class="error"></p>
+</div>
+<div class="tooltip" data-tooltip-text="Второй вопрос">
+<p>2. В каком году произошёл взрыв ЧАЭС?</p>
+<p><input checked="checked" class="radio-input" name="q_2" type="radio" value="">1975
+</p>
+<p><input class="radio-input" name="q_2" type="radio" value="">1986
+</p>
+<p><input class="radio-input" name="q_2" type="radio" value="">1977
+</p>
+</div>
+<div class="tooltip" data-tooltip-text="Третий вопрос">
+<p>3. Что нужно делать при пожаре?</p>
+<select name="q_3">
+<option value="">Вызвать пожарных</option>
+<option value="">Залезть под кровать</option>
+</select>
+</div>
+<button class="main-btn btn-show-modal" data-btn-callback="checkTestForm" data-modal-text="Отправить данные?" id="sendBtn" name="button" type="button">
+Отправить
+</button>
+<button class="main-btn btn-show-modal" data-btn-callback="resetForm" data-modal-text="Стереть данные?" id="resetBtn" name="button" type="button">
+Очистить форму
+</button>
+</form>
+</div>
+</main>
+<footer></footer>
+<script charset="utf-8" src="js/index.js"></script>
+<script charset="utf-8" src="js/checkForm.js"></script>
+</body>
+</html>

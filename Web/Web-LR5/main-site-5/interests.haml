@@ -1,0 +1,67 @@
+!!!
+%html{:dir => "ltr", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Персональный сайт Шведенко Александра. Мои интересы
+    %link{:href => "css/reset.css", :rel => "stylesheet"}/
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    %script{:src => "Libs/jquery.js"}
+    %script{:charset => "utf-8", :src => "js/index.js"}
+  %body
+    = Haml::Engine.new(File.read('./header.haml')).render
+    %main
+      %section.page-name
+        %span Мои интересы
+      .content-wrapper
+        .grey-block.content
+          %span Содержание
+          %ul
+            :javascript
+              generateSection({
+                type: "link",
+                id: "hobby",
+                title: "Моё хобби",
+              });
+            :javascript
+              generateSection({
+                type: "link",
+                id: "books",
+                title: "Мои любимые книги",
+              });
+            :javascript
+              generateSection({
+                type: "link",
+                id: "films",
+                title: "Мои любимые фильмы",
+              });
+        :javascript
+          generateSection({
+            type: "section",
+            id: "hobby",
+            bgUrl: "img/piano.jpg",
+            title: "Моё хобби",
+            text:
+              "Моим основным хобби является игра на пианино. Я начал заниматься этим с октября 2019 года",
+          });
+
+          generateSection({
+            type: "section",
+            id: "books",
+            bgUrl: "img/books.jpg",
+            title: "Мои любимые книги",
+            text:
+              "Моими любимыми книгами являются:<ol>" +
+              "<li>Мастер и Маргарита</li>" +
+              "<li>Маленький принц</li>" +
+              "</ol>",
+          });
+
+          generateSection({
+            type: "section",
+            id: "films",
+            bgUrl: "img/films.jpg",
+            title: "Мои любимые фильмы",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          });
+    %footer

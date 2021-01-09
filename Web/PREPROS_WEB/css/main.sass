@@ -1,0 +1,550 @@
+@mixin box_shadow($prefix) 
+  @if $prefix 
+    -webkit-box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2)
+    -moz-box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2)
+    box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2)
+  @else 
+    box-shadow: 0px 0px 100px -5px rgba(34, 60, 80, 0.2)
+  
+
+$color:#FFFFFF
+$color_t:#000000
+$ffT:Tenor Sans
+$ffN:Noto Sans
+$fs:25px
+$color_calend:#9c8e89
+
+html
+  margin: 0
+  padding: 0
+
+#album_img
+  .next-img
+    display: flex
+    width: 40px
+    position: absolute
+    top: 0
+    right: 30px
+    height: 100%
+    z-index: 100
+
+  .prev-img
+    display: flex
+    width: 40px
+    position: absolute
+    top: 0
+    right: 30px
+    height: 100%
+    z-index: 100
+    left: 30px
+
+  .next-img span, .prev-img span
+    display: flex
+    align-items: center
+    justify-content: center
+    align-self: center
+    justify-self: center
+    text-align: center
+    width: 40px
+    height: 40px
+    color: #fff
+    font-family: var(--second-font)
+    font-weight: bold
+    font-size: 22px
+
+  .next-img span:hover
+    background-color: rgba(255, 255, 255, 0.8)
+    color: $color_t
+    border-radius: 50px
+    cursor: pointer
+
+  .prev-img
+    span:hover
+      background-color: rgba(255, 255, 255, 0.8)
+      color: $color_t
+      border-radius: 50px
+      cursor: pointer
+
+    &.disabled
+      display: none
+
+  .next-img.disabled
+    display: none
+
+.modal
+  color: black
+  text-decoration: none
+  font-family:$ffT
+
+#modal_form
+  width: 450px
+  height: 100px
+  border-radius: 5px
+  border: 3px #000 solid
+  background:  $color
+  position: fixed
+  top: 45%
+  left: 50%
+  margin-top: -150px
+  margin-left: -250px
+  display: none
+  opacity: 0
+  z-index: 5
+  padding: 20px 10px
+
+  button
+    #modal_close_YES, #modal_close_NO
+      width: 50px
+      height: 21px
+      margin-top: 50px
+      position: absolute
+      cursor: pointer
+
+#overlay
+  z-index: 3
+  position: fixed
+  background-color:$color_t
+  opacity: 0.8
+  -moz-opacity: 0.8
+  backdrop-filter: blur(10px)
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  cursor: pointer
+  display: none
+
+#modal_form p
+  color: $color_t
+  text-align: justify
+  font-family: $ffN
+  font-size: 20px
+
+.popup
+  display: none
+  position: absolute
+  top: 20px
+  left: 0
+  width: 250px
+  padding: 20px
+  z-index: 20
+  background-color: $color_calend
+
+  p
+    font-family: $ffN
+    color:$color 
+
+  &.active
+    display: block
+
+.input_wrapper
+  position: relative
+
+.picture a
+  padding: 12px
+
+.photo
+  img
+    width: 100%
+    height: 250px
+    object-fit: cover
+
+  font-family: $ffN
+  font-size: 5px
+
+.section
+  display: grid
+  grid-template-columns: 30% 70%
+  grid-gap: 20px
+
+  img
+    margin-top: 100px
+    margin-bottom: 100px
+    margin-left: 200px
+
+.text
+  font-family: Noto Sans
+  font-size: 20px
+  color: $color_t
+  margin-top: 190px
+  text-align: center
+
+.text_me
+  text-indent: 20px
+  color: $color_t
+  text-align: justify
+  font-family: $ffN
+  font-size: 25px
+  margin-left: 20%
+  margin-right: 20%
+
+  a
+    color: $color_t
+    margin-top: 7%
+    font-family: $ffT
+    text-align: justify
+    font-size: 30px
+    margin-left: 2%
+
+.content
+  margin-top: 100px
+
+%book, .film
+  text-indent: 20px
+  color: $color_t
+  text-align: justify
+  font-family: $ffN
+  font-size: 25px
+  margin-left: 2%
+  margin-right: 2%
+
+.album
+  font-family: $ffN
+  color: $color_t
+  font-size: 30px
+  text-align: center
+
+  img
+    width: 100%
+
+.wrapper_album_img
+  display: flex
+  justify-content: center
+
+#album_img
+  display: none
+  width: auto
+  height: 700px
+  top: 100px
+  position: fixed
+  background-color: #fff
+  padding: 10px
+  border-radius: 10px
+  @include box_shadow(true) 
+  z-index: 3
+
+  img
+    width: auto
+    height: 700px
+    border-radius: 10px
+
+  figcaption
+    position: absolute
+    bottom: 40px
+    color: $color
+    font-size: 22px
+    text-align: center
+    width: 100%
+    font-family: Tenor Sans
+
+#black_bg
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.7)
+  z-index: 2
+
+  &:hover
+    cursor: pointer
+
+.brd
+  height: 100%
+  border: 4px double black
+
+  /* Параметры границы*/
+  padding: 10px
+
+  /* Поля вокруг текста*/
+  margin-left: 34%
+  margin-right: 34%
+
+.gender
+  text-align: center
+  color: $color_t
+  font-family: $ffN
+  font-size: 18px
+
+.current a
+  color:$color_t
+
+form p
+  color:$color_t
+  text-align: justify
+  font-family:$ffN
+  font-size: 15px
+
+legend
+  color: $color_t
+  text-align: center
+  font-family: $ffT
+  font-size: 30px
+  margin-bottom: 5px
+
+menu li a
+  color: $color_t
+  font-family: $ffT
+  font-size: 25px
+  margin-top: 7%
+  margin-left: 20%
+
+body
+  background-color:$color
+  background: url('../img/FON.png')
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  margin: 0
+
+a
+  color: white
+  font-family: $ffT
+  font-size: 20px
+  text-align: center
+
+article
+  text-align: center
+  color: $color_t
+  font-family: $ffT
+  font-size: 40px
+  margin-top: 5%
+  margin-bottom: 3%
+
+footer
+  margin-top: 4%
+  background-color: #7B6E6A
+  color: white
+  display: block
+  height: 250px
+  left: 0
+  position: absolute
+  width: 100%
+
+address
+  text-align: center
+  margin-top: 5%
+
+footer p
+  color: white
+  text-align: center
+  font-family: $ffT
+  font-size: 20px
+  margin-top: 1%
+
+.footer footer
+  bottom: 0
+
+header
+  width: 100%
+  height: auto
+  height: 80px
+  background-color: #7B6E6A
+  align-items: center
+  display: flex
+  position: fixed
+  top: 0
+
+#node
+  display: grid
+  grid-template-columns: 3fr 0.5fr
+  color: white
+  font-family: $ffN
+  font-size: 14px
+
+.wrapper
+  margin: 0 auto
+  display: flex
+
+.album
+  display: grid
+  grid-template-columns: repeat(5, 1fr)
+  color: $color_t
+  grid-gap: 50px
+
+.interestsBook
+  margin-left: 10%
+  margin-right: 10%
+
+  img
+    height: 230px
+    width: auto
+    margin-top: 4%
+    border: 5px solid #FFFFFF
+
+.interestsFilm
+  margin-left: 10%
+  margin-right: 10%
+
+  img
+    text-align: center
+    height: auto
+    width: 30%
+    margin-top: 4%
+    border: 5px solid #FFFFFF
+
+#menu a.active
+  color: $color_t
+
+.sub-menu
+  overflow: hidden
+  opacity: 0
+  transition: all 0.5s ease-in
+  color: $color
+  position: absolute
+  background: #7B6E6A
+  padding: 10px
+
+.menu-item
+  position: relative
+
+.logo
+  width: 200px
+  float: left
+  height: 80%
+  display: block
+  margin-left: 15px
+  margin-top: 10px
+  color: white
+  font-family: $ffT
+  font-size: 50px
+  text-decoration: none
+  cursor: pointer
+
+.NV
+  font-family: $ffT
+  font-size: 50px
+  color: white
+  text-decoration: none
+
+.top-menu
+  margin: 0 auto
+  width: 685%
+  height: 80px
+  float: left
+  align-items: center
+
+  ul li
+    display: inline-block
+    float: left
+    align-items: center
+    display: inline-block
+
+    a
+      display: grid
+      grid-template-columns: 4fr 0.5fr
+      grid-gap: 1px 1px
+      padding: 3px 0
+      width: 180px
+      text-decoration: none
+      font-family: $ffN
+      font-size: 14px
+      color: white
+      height: 55px
+      padding-top: 15px
+      cursor: pointer
+
+.calendar-wrapper
+  position: relative
+
+#calendar
+  position: absolute
+  display: none
+  width: auto
+  height: auto
+  top: 80px
+  background-color: $color
+  border-radius: 5px
+  border: 1px solid #000
+  background-color: $color_calend
+  color: $color
+
+.calendar-header
+  display: grid
+  grid-template-columns: 1fr 1fr
+  padding: 5px 0
+  align-items: center
+
+#today_day_of_week
+  margin-left: 20px
+  padding: 5px 15px
+  transition: .3s
+
+  &:hover
+    cursor: pointer
+    border-radius: 100px
+    color: $color_t
+    transition: .3s
+
+#calendar
+  select
+    border: 0
+    border-radius: 0
+    width: auto
+    background-color: $color_calend
+    color: #fff
+
+  input
+    width: 60px
+    border: 0
+    border-radius: 0
+    background-color: $color_calend
+    color: #fff
+
+  hr
+    border: 0
+    background-color: rgba(156, 142, 137, 0.5)
+    width: 100%
+    height: 1px
+    margin: 0
+
+  table tbody
+    td
+      padding: 5px 15px
+      text-align: center
+      transition: .3s
+      border-radius: 100px
+      margin-left: 10px
+
+      &.active
+        background-color: #ebcfc4
+
+    tr:not(.not-hover) td:not(.not-hover):hover
+      cursor: pointer
+      transition: .3s
+      color: $color_t
+
+#days
+  padding: 10px
+
+.days-of-week
+  padding-left: 10px
+
+.visit
+  table
+    border-collapse: collapse
+
+    /*убираем пустые промежутки между ячейками*/
+    color: $color
+    background-color: #D6CBC8
+    width: 50%
+    margin-top: 8%
+    margin-left: 25%
+
+  th
+    border-bottom: 2px solid
+    border-right: 30px solid
+    border-left: 30px
+    color: #039
+    padding: 8px 2px
+
+  td
+    border-right: 30px
+    border-left: 30px
+    color:$color
+    padding: 12px 2px
+    border-bottom: 1px solid white
+
+  tr:hover td
+    color: $color_t

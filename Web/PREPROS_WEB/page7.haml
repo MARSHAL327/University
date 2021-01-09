@@ -1,0 +1,57 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title История просмотров
+    %link{:href => "css/main.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/date.js", :type => "text/javascript"}
+  %body
+    %header
+      .wrapper
+        .logo
+          %a{:href => "index.html"}
+            %span.NV NV
+        #topMenu.top-menu
+          %ul#menu
+            %li#main
+              %a#index{:href => "index.html"} ГЛАВНАЯ СТРАНИЦА
+            %li#about
+              %a#page1{:href => "page1.html"} ОБО МНЕ
+            %li#study
+              %a#page2{:href => "page2.html"} УЧЁБА
+            %li.menu-item
+              %a#page3{:href => "page3.html"} МОИ ИНТЕРЕСЫ
+              %ul.sub-menu
+                %li#hobby
+                  %a{:href => "../WEB_1/page3.html#hobby"} МОЁ ХОББИ
+                %li#books
+                  %a{:href => "../WEB_1/page3.html#books"} МОИ ЛЮБИМЫЕ КНИГИ
+                %li#movies
+                  %a{:href => "../WEB_1/page3.html#movies"} МОИ ЛЮБИМЫЕ ФИЛЬМЫ
+            %li#photo
+              %a#page4{:href => "page4.html"} ФОТОАЛЬБОМ
+            %li#contact
+              %a#page5{:href => "page5.html"} КОНТАКТ
+            %li#tests
+              %a#page6{:href => "page6.html"} ТЕСТ
+            %li#history
+              %a#page7{:href => "page7.html"} ИСТОРИЯ ПРОСМОТРА
+      #node
+    .visit
+      %table#history_table
+        %tr
+          %td СТРАНИЦЫ
+          %td ИСТОРИЯ ТЕКУЩЕГО СЕАНСА
+          %td ИСТОРИЯ ЗА ВСЁ ВРЕМЯ
+    .footer
+      %footer
+        %address.picture
+          %a{:href => "https://vk.com/nikolenko99"}
+            %img{:alt => "Ошибка загрузки изображения!", :src => "icon/VK.png"}/
+          %a{:href => "https://www.instagram.com/nikolenko_nv/"}
+            %img{:alt => "Ошибка загрузки изображения!", :src => "icon/INSTAGRAM.png"}/
+        %p СЕВАСТОПОЛЬ 2020
+    %script{:src => "js/active_menu.js", :type => "text/javascript"}
+    %script{:src => "js/child_menu.js", :type => "text/javascript"}
+    %script{:src => "js/history.js", :type => "text/javascript"}

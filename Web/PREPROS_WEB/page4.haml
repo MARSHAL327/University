@@ -1,0 +1,67 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title ФОТОАЛЬБОМ
+    %link{:href => "css/main.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "jQuery/jquery-3.0.0.min.js"}
+    %script{:src => "js/active_menu.js", :type => "text/javascript"}
+    %script{:src => "js/photo_album.JS", :type => "text/javascript"}
+    %script{:src => "js/date.js", :type => "text/javascript"}
+  %body
+    %header
+      .wrapper
+        .logo
+          %a{:href => "index.html"}
+            %span.NV NV
+        .top-menu
+          %ul#menu
+            %li
+              %a{:href => "index.html"} ГЛАВНАЯ СТРАНИЦА
+            %li
+              %a{:href => "page1.html"} ОБО МНЕ
+            %li
+              %a{:href => "page2.html"} УЧЁБА
+            %li.menu-item
+              %a#page3{:href => "page3.html"} МОИ ИНТЕРЕСЫ
+              %ul.sub-menu
+                %li#hobby
+                  %a{:href => "../WEB_1/page3.html#hobby"} МОЁ ХОББИ
+                %li#books
+                  %a{:href => "../WEB_1/page3.html#books"} МОИ ЛЮБИМЫЕ КНИГИ
+                %li#movies
+                  %a{:href => "../WEB_1/page3.html#movies"} МОИ ЛЮБИМЫЕ ФИЛЬМЫ
+            %li
+              %a{:href => "page4.html"} ФОТОАЛЬБОМ
+            %li
+              %a{:href => "page5.html"} КОНТАКТ
+            %li
+              %a{:href => "page6.html"} ТЕСТ
+            %li
+              %a{:href => "page7.html"} ИСТОРИЯ ПРОСМОТРА
+      #node
+    %article ФОТОАЛЬБОМ
+    .wrapper_album_img
+      #black_bg
+      %figure#album_img
+        %img{:alt => "", :src => ""}/
+        %figcaption
+        .next-img
+          %span ᐳ
+        .prev-img
+          %span ᐸ
+    .album
+      -titles = ['Прогулка', 'Закат', 'Типо модель', 'Лучшая работа', 'Моя любовь', 'Частичка Ялты', 'Позирую', 'Пейзаж Балаклавы', 'Мяу', 'Селфи', 'Лимон', 'Сияю', 'Селфи', 'Селфи', 'Ловлю сердечки'];
+      -fotos = ["photo/photo1.jpg","photo/photo2.jpg","photo/photo3.jpg","photo/photo4.jpg","photo/photo5.jpg","photo/photo6.jpg","photo/photo7.jpg","photo/photo8.jpg","photo/photo9.jpg","photo/photo10.jpg","photo/photo11.jpg","photo/photo12.jpg","photo/photo13.jpg","photo/photo14.jpg","photo/photo15.jpg"];
+      -srcs = ["photo/origin/photo_1.jpg","photo/origin/photo_2.jpg","photo/origin/photo_3.jpg","photo/origin/photo_4.jpg","photo/origin/photo_5.jpg","photo/origin/photo_6.jpg","photo/origin/photo_7.jpg","photo/origin/photo_8.jpg","photo/origin/photo_9.jpg","photo/origin/photo_10.jpg","photo/origin/photo_11.jpg","photo/origin/photo_12.jpg","photo/origin/photo_13.jpg","photo/origin/photo_14.jpg","photo/origin/photo_15.jpg"];
+
+      -titles.each_with_index do |item, i|
+        .div
+          %a{:href=>"javascript://"}
+            %img.foto_img{:"data-img-id" => "#{i}", :"data-original"=>"#{srcs[i]}", :src=>"#{fotos[i]}", :title => "#{titles[i]}"}
+          %p #{item}
+    %footer
+      %p СЕВАСТОПОЛЬ 2020
+    %script{:src => "js/child_menu.js", :type => "text/javascript"}
+    %script{:src => "js/history.js", :type => "text/javascript"}

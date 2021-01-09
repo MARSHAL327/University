@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>КОНТАКТ</title>
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+<script src="jQuery/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/active_menu.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+</head>
+
+<body>
+<header>
+<div id="js/date.js"></div>
+<div class="wrapper">
+<div class="logo">
+<a href="index.html">
+<span class="NV">NV</span>
+</a>
+</div>
+
+<div class="top-menu">
+<ul id="menu">
+<li><a href="index.html">ГЛАВНАЯ СТРАНИЦА </a></li>
+<li><a href="page1.html">ОБО МНЕ </a></li>
+<li><a href="page2.html">УЧЁБА </a></li>
+<li class="menu-item">
+<a href="page3.html" id="page3">МОИ ИНТЕРЕСЫ</a>
+<ul class="sub-menu">
+<li id="hobby">
+<a href="../WEB_1/page3.html#hobby">МОЁ ХОББИ</a>
+</li>
+<li id="books">
+<a href="../WEB_1/page3.html#books">МОИ ЛЮБИМЫЕ КНИГИ</a>
+</li>
+<li id="movies">
+<a href="../WEB_1/page3.html#movies">МОИ ЛЮБИМЫЕ ФИЛЬМЫ</a>
+</li>
+</ul>
+</li>
+<li><a href="page4.html">ФОТОАЛЬБОМ </a></li>
+ <li><a href="page5.html">КОНТАКТ </a></li>
+<li><a href="page6.html">ТЕСТ</a></li>
+<li><a href="page7.html">ИСТОРИЯ ПРОСМОТРА</a></li>
+</ul>
+</div>
+</div>
+<div id="node"></div>
+</header>
+
+<article>Свяжитесь со мной</article>
+
+<legend>Заполните форму</legend>
+
+<form
+class="brd"
+autocomplete="off"
+name="contact"
+method="post"
+action="mailto:viktoria.27.nikolenko@mail.ru"
+>
+<div class="fio input_wrapper">
+<input
+type="text"
+name="fio"
+size="75"
+placeholder="Укажите ФИО"
+onblur="validate_name('ErName')"
+/>
+<span class="Error" id="ErName"></span>
+
+<br/>
+<div class="poup_fio popup">
+<p>ФИО должно содержать 3 слова</p>
+</div>
+</div>
+
+<div class="sex">
+<p>Пол:</p>
+<input type="radio" name="sex" value="man" />мужской
+<input type="radio" name="sex" value="women" />женский
+</div>
+
+<div class="age">
+<p>Укажите возраст</p>
+<select id="age">
+<option></option>
+<option value="0">меньше 15</option>
+<option value="1">от 16 до 20</option>
+<option value="2">от 21 до 30</option>
+<option value="3">больше 30</option>
+</select>
+</div>
+<div class="calendar-wrapper">
+<p>Дата рождения</p>
+<input
+id="birthday"
+type="text"
+name="birthday"
+onclik="calendar(new Date())"
+readonly
+value
+onblur="validate_date()"
+enabled="0"
+/>
+<span class="Error" id="ErDate"></span>
+<div id="calendar">
+<div class="calendar-header">
+<div class="left-calendar-header">
+<span id="today_day_of_week">Понедельник 1</span>
+</div>
+<div class="right-calendar-header">
+<select class="" name="" id="selectMonth">
+<option value="">ЯНВАРЬ</option>
+<option value="">ФЕВРАЛЬ</option>
+<option value="">МАРТ</option>
+<option value="">АПРЕЛЬ</option>
+<option value="">МАЙ</option>
+<option value="">ИЮНЬ</option>
+<option value="">ИЮЛЬ</option>
+<option value="">АВГУСТ</option>
+<option value="">СЕНТЯБРЬ</option>
+<option value="">ОКТЯБРЬ</option>
+<option value="">НОЯБРЬ</option>
+<option value="">ДЕКАБРЬ</option>
+</select>
+<input id="selectYear" type="number" value="2020" />
+</div>
+</div>
+<hr />
+<div class="content">
+<div id="days">
+<table>
+<tr class="not-hover">
+<td>ПН</td>
+<td>ВТ</td>
+<td>СР</td>
+<td>ЧТ</td>
+<td>ПТ</td>
+<td>СБ</td>
+<td>ВС</td>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<br/>
+<div class="phone input_wrapper">
+        
+<input
+type="phone"
+name="phone"
+placeholder="Укажите номер телефона"
+onblur="validate_phone('ErPhone')"
+/>
+<span class="Error" id="ErPhone"></span>
+<div class="poup_phone popup">
+<p>Номер начинается на 7 или 3</p>
+</div>
+</div>
+     
+<br/>
+      
+<div class="email input_wrapper">
+<input
+type="email"
+name="replyto"
+size="75"
+placeholder="Укажите e-mail"
+onblur="validate_email('ErMail')"
+/>
+<span class="Error" id="ErMail"></span>
+<div class="poup_email popup"><p>Например, name@mail.ru</p></div>
+</div>
+<br />
+<div>
+<textarea
+rows="7"
+cols="77"
+name="message"
+placeholder="Введите текст сообщения"
+onblur="validate_message()"
+></textarea>
+</div>
+
+<button name="submit">
+<a
+href="#"
+class="modal"
+data-poupText="Вы действительно хотите отправить форму?"
+data-type="submit"
+>
+Отправить
+</a>
+</button>
+
+<div id="modal_form">
+<p></p>
+<button type="submit" id="modal_close_YES">ДА</button>
+<button type="button" id="modal_close_NO">НЕТ</button>
+</div>
+<div id="overlay"></div>
+
+<button name="clear">
+<a
+href="#"
+class="modal"
+data-poupText="Вы действительно хотите очистить форму?"
+data-type="reset"
+>Очистить</a
+>
+</button>
+</form>
+
+<footer>
+<address class="picture">
+<a href="https://vk.com/nikolenko99"
+><img src="icon/VK.png" alt="Ошибка загрузки изображения!"
+/></a>
+<a href="https://www.instagram.com/nikolenko_nv/"
+><img src="icon/INSTAGRAM.png" alt="Ошибка загрузки изображения!"
+/></a>
+</address>
+<p>СЕВАСТОПОЛЬ 2020</p>
+</footer>
+<script type="text/javascript" src="js/child_menu.js"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript" src="js/valid_contact.js"></script>
+<script type="text/javascript" src="js/history.js"></script>
+</body>
+</html>
