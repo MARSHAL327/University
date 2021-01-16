@@ -1,0 +1,7 @@
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\bin\Release\TPO_LR6.exe.config
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\bin\Release\TPO_LR6.exe
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\bin\Release\TPO_LR6.pdb
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\obj\Release\TPO_LR6.csprojAssemblyReference.cache
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\obj\Release\TPO_LR6.csproj.CoreCompileInputs.cache
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\obj\Release\TPO_LR6.exe
+C:\Users\sanya\Desktop\University\TPO\LR6\program\TPO_LR6\obj\Release\TPO_LR6.pdb

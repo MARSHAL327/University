@@ -1,5 +1,3 @@
-let a = 2;
-
 birthday.addEventListener("click", () => {
   calendar.style.display = calendar.style.display == "block" ? "none" : "block";
 });

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="ru">
+    <meta charset="utf-8">
+    <title>Контакт</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body onload="InitMenu(); DateShow(); GenerateBirthday(); ValidateForms(); AddToHistory();">
+    <header>
+        <nav>
+            <ul class="top_menu">
+                <a href="index.html"><li>Главная страница</li></a>
+                <a href="about.html"><li>Обо мне</li></a>
+                <a href="interests.html"><li>Мои интересы</li></a>
+                <a href="learning.html"><li>Учеба</li></a>
+                <a href="photos.html"><li>Фотоальбом</li></a>
+                <a href="contacts.html"><li>Контакт</li></a>
+                <a href="history.html"><li>История</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main class="main_block">
+        <h1 class="title">Контакт</h1>
+        <br>
+        <form action="mailto:vadik.voronkin@mail.ru" id="contact_form" method="POST" enctype="text/plain">
+            Ф.И.О. <br>
+            <input id="fio" data-rules="fio" name="fio" type="text"><br><br>
+            <label for="m_radio"> Пол мужской </label>
+            <input id="m_radio" name="pol" type="radio" value="Male" checked><br>
+            <label for="f_radio"> Пол женский </label>
+            <input id="f_radio" name="pol" type="radio" value="Female"><br><br> Возраст <br>
+            <select name="age">
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                </select><br><br> Email <br>
+            <input id="email" name="mail" data-rules="mail" type="text">
+            <br><br> Birthday <br>
+            <input id="birthday" name="birthday" data-rules="birthday" type="text" readonly>
+            <br>
+            <div class="birthdayTable">
+                <div>
+                    <select id="month">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    <select id="year">
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                        </select>
+                </div>
+                <div id="daysOfWeek">
+                    <div class="dayOfWeek">
+                        <h2>Mo</h2>
+                    </div>
+                    <div class="dayOfWeek">
+                        <h2>Tu</h2>
+                    </div>
+                    <div class="dayOfWeek">
+                        <h2>We</h2>
+                    </div>
+                    <div class="dayOfWeek">
+                        <h2>Th</h2>
+                    </div>
+                    <div class="dayOfWeek">
+                        <h2>Fr</h2>
+                    </div>
+                    <div class="dayOfWeek">
+                        <h2>Sa</h2>
+                    </div>
+                    <div class="dayOfWeek">
+                        <h2>Su</h2>
+                    </div>
+                </div>
+                <div id="days">
+                </div>
+            </div>
+            <br> Телефон <br>
+            <input id="tel" name="telephone" data-rules="tel" type="text">
+            <br>
+            <input id="submit" type="submit" value="Send">
+            <input type="reset" value="Reset">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

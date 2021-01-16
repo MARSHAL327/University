@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Тест </title>
+    <script src="scripts/script.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body onload="InitMenu(); DateShow(); AddToHistory();">
+    <header>
+        <nav>
+            <ul class="top_menu">
+                <a href="index.html"><li>Главная страница</li></a>
+                <a href="about.html"><li>Обо мне</li></a>
+                <a href="interests.html"><li>Мои интересы</li></a>
+                <a href="learning.html"><li>Учеба</li></a>
+                <a href="photos.html"><li>Фотоальбом</li></a>
+                <a href="contacts.html"><li>Контакт</li></a>
+                <a href="history.html"><li>История</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main class="main_block">
+        <h1 class="title">Тест по дисциплине "Основы экологии"</h1>
+        <br>
+        <form onsubmit="return ValidateForms()" action="mailto:vadik.voronkin@mail.ru" method="POST" enctype="text/plain">
+            Ф.И.О. <br>
+            <input data-rules="fio" type="text" name="fio"><br><br> Группа <br>
+            <select name="group">
+                    <optgroup label="ИС">
+                        <option value="is1">ИС/б-18-1-о</option>
+                        <option value="is2">ИС/б-18-2-о</option>
+                        <option value="is3">ИС/б-18-3-о</option>
+                    </optgroup>
+                    <optgroup label="ПИ">
+                        <option value="pi1">ПИ/б-18-1-о</option>
+                    </optgroup>
+                </select><br><br> Вопрос 1. Что такое гидросфера?<br>
+            <select name="otv1">
+                    <optgroup label="Земля">
+                        <option value="z1">Горы, плато, низмености</option>
+                        <option value="z2">Моря, озера, реки</option>
+                        <option value="z3">Пустыни, леса, степи</option>
+                    </optgroup>
+                    <optgroup label="Космос">
+                        <option value="k1">Совокупность орбит</option>
+                        <option value="k2">Совокупность планет</option>
+                        <option value="k3">Совокупность систем в галактике</option>
+                    </optgroup>
+                    <optgroup label="Галактика">
+                        <option value="g1">Скопление звезд в галактике</option>
+                        <option value="g2">Скопление карликовых звезд</option>
+                        <option value="g3">Скопление туманностей</option>
+                    </optgroup>
+                </select><br><br> Вопрос 2. Какова функция грибов?<br>
+            <input type="text" data-rules="otv2" name="otv2"><br><br> Вопрос 3. Что необходимо растениям для фотосинтеза?<br>
+            <input type="checkbox" name="otv3" value="Солнечная энергия"> Солнечная энергия<br>
+            <input type="checkbox" name="otv3" value="Питательные вещества"> Питательные вещества<br>
+            <input type="checkbox" name="otv3" value="Углекислый газ"> Углекислый газ<br>
+            <input type="submit" value="Send">
+            <input type="reset" value="Reset">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
