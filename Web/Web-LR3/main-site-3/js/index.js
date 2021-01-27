@@ -87,7 +87,6 @@ let timerId = setInterval(() => {
 }, 1000);
 
 window.onload = function() {
-  let thisHistory, globalHistory;
   let pathname = document.location.pathname; // адрес текущей страницы
   pathname = pathname.slice(pathname.lastIndexOf("/") + 1, pathname.length);
 

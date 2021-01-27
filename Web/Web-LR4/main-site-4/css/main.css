@@ -623,6 +623,11 @@ footer {
   cursor: pointer;
 }
 
+.tooltip {
+  position: relative;
+  width: 250px;
+}
+
 .tooltip-block {
   z-index: 9999;
   position: absolute;
@@ -673,9 +678,4 @@ footer {
   cursor: pointer;
   background-color: rgb(202, 202, 202);
   transition: 0.3s;
-}
-
-.tooltip {
-  position: relative;
-  width: 250px;
 }
